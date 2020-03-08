@@ -44,7 +44,7 @@
   .player img {
     grid-area: 1/1;
     width: 1000px;
-	max-width: 100%
+    max-width: 100%;
   }
   .appearing {
     opacity: 1;
@@ -59,7 +59,7 @@
 </style>
 
 <div class="wrapper">
-  {#if loaded}
+  <div hidden={!loaded}>
     <div class="player">
       {#each images as image, index}
         <img
@@ -69,12 +69,21 @@
       {/each}
     </div>
     <div class="buttons">
-      <button on:mousedown={startLooping} on:touchstart={startLooping}>Back</button>
-      <button data-direction="next" on:touchstart={startLooping} on:mousedown={startLooping}>Next</button>
+      <button on:mousedown={startLooping} on:touchstart={startLooping}>
+        Back
+      </button>
+      <button
+        data-direction="next"
+        on:touchstart={startLooping}
+        on:mousedown={startLooping}>
+        Next
+      </button>
     </div>
-  {:else}
-    <p>Loading...</p>
-  {/if}
+  </div>
+  <p hidden={loaded}>Loading...</p>
 </div>
 
-<svelte:window on:mouseup={stopLooping} on:touchend={stopLooping}  on:load={load} />
+<svelte:window
+  on:mouseup={stopLooping}
+  on:touchend={stopLooping}
+  on:load={load} />
