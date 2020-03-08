@@ -344,7 +344,7 @@ var app = (function () {
     		c: function create() {
     			p = element("p");
     			p.textContent = "Loading...";
-    			add_location(p, file, 74, 4, 1443);
+    			add_location(p, file, 74, 4, 1442);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p, anchor);
@@ -400,11 +400,11 @@ var app = (function () {
     			button1.textContent = "Next";
     			attr_dev(div0, "class", "player svelte-15a6h5k");
     			add_location(div0, file, 61, 4, 1024);
-    			add_location(button0, file, 70, 6, 1290);
+    			add_location(button0, file, 70, 6, 1289);
     			attr_dev(button1, "data-direction", "next");
-    			add_location(button1, file, 71, 6, 1346);
+    			add_location(button1, file, 71, 6, 1345);
     			attr_dev(div1, "class", "buttons svelte-15a6h5k");
-    			add_location(div1, file, 69, 4, 1262);
+    			add_location(div1, file, 69, 4, 1261);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div0, anchor);
@@ -478,7 +478,7 @@ var app = (function () {
     	const block = {
     		c: function create() {
     			img = element("img");
-    			if (img.src !== (img_src_value = "/frames/frame" + /*index*/ ctx[11] + ".jpg")) attr_dev(img, "src", img_src_value);
+    			if (img.src !== (img_src_value = "frames/frame" + /*index*/ ctx[11] + ".jpg")) attr_dev(img, "src", img_src_value);
 
     			attr_dev(img, "class", img_class_value = "" + (null_to_empty(/*index*/ ctx[11] === /*currentImage*/ ctx[0]
     			? "appearing"
