@@ -43,7 +43,8 @@
   }
   .player img {
     grid-area: 1/1;
-    max-width: 1000px;
+    width: 1000px;
+	max-width: 100%
   }
   .appearing {
     opacity: 1;
@@ -68,12 +69,12 @@
       {/each}
     </div>
     <div class="buttons">
-      <button on:mousedown={startLooping}>Back</button>
-      <button data-direction="next" on:mousedown={startLooping}>Next</button>
+      <button on:mousedown={startLooping} on:touchstart={startLooping}>Back</button>
+      <button data-direction="next" on:touchstart={startLooping} on:mousedown={startLooping}>Next</button>
     </div>
   {:else}
     <p>Loading...</p>
   {/if}
 </div>
 
-<svelte:window on:mouseup={stopLooping} on:load={load} />
+<svelte:window on:mouseup={stopLooping} on:touchend={stopLooping}  on:load={load} />
